@@ -518,32 +518,33 @@ export class EditorComponent {
     //   alert('This browser doesn\'t provide means to serialize canvas to an image');
     // }
     // else {
-      console.log(this.canvas.toDataURL('png'))
-      //window.open(this.canvas.toDataURL('png'));
-      var image = new Image();
-      image.src = this.canvas.toDataURL('png')
-      image.crossOrigin = "anonymous";
-      var w = window.open("");
-      w?.document.write(image.outerHTML);
+      // console.log(this.canvas.toDataURL('png'))
+      // //window.open(this.canvas.toDataURL('png'));
+      // var image = new Image();
+      // image.src = this.canvas.toDataURL('png')
+      // image.crossOrigin = "anonymous";
+      // var w = window.open("");
+      // w?.document.write(image.outerHTML);
     // }
 
-    // // Convert canvas to data URL (PNG format)
-    // const dataURL = this.canvas.toDataURL('image/png');
+    // Convert canvas to data URL (PNG format)
+    const dataURL = this.canvas.toDataURL('image/png');
 
-    // // Create a temporary link element
-    // const link = document.createElement('a');
-    // link.href = dataURL;
-    // link.download = 'canvas_image.png'; // Set the download filename
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = dataURL;
+    link.download = 'canvas_image.png'; // Set the download filename
 
-    // // Trigger a click event on the link to initiate the download
-    // document.body.appendChild(link); // Append the link to the document body
-    // link.click(); // Simulate a click event
-    // document.body.removeChild(link); // Remove the link from the document body after download
+    // Trigger a click event on the link to initiate the download
+    document.body.appendChild(link); // Append the link to the document body
+    link.click(); // Simulate a click event
+    document.body.removeChild(link); // Remove the link from the document body after download
   }
 
   saveCanvasToJSON() {
     let canvasJson = JSON.stringify(this.canvas);
     localStorage.setItem('Kanvas', canvasJson);
+    alert('Saved canvas to local..')
   }
 
   loadCanvasFromJSON() {
