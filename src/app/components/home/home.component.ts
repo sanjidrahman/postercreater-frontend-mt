@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  commonUrl = 'http://localhost:8080/file/templates'
+  // commonUrl = 'http://localhost:8080/file/templates'
+  commonUrl = 'https://poster-zpqy.onrender.com/file/templates'
   templates: any
   subscribe = new Subscription()
 
