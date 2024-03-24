@@ -58,11 +58,10 @@ export class EditorComponent {
       img.set({
         scaleX: this.canvas.width / img.width,
         scaleY: this.canvas.height / img.height,
-        selectable: false
+        selectable: false,
       });
-
       this.canvas.setBackgroundImage(img, this.canvas.renderAll.bind(this.canvas));
-    });
+    }, { crossOrigin: "Anonymous" });
 
     this.canvas.on({
       'object:moving': (e: any) => { },
@@ -518,13 +517,13 @@ export class EditorComponent {
     //   alert('This browser doesn\'t provide means to serialize canvas to an image');
     // }
     // else {
-      // console.log(this.canvas.toDataURL('png'))
-      // //window.open(this.canvas.toDataURL('png'));
-      // var image = new Image();
-      // image.src = this.canvas.toDataURL('png')
-      // image.crossOrigin = "anonymous";
-      // var w = window.open("");
-      // w?.document.write(image.outerHTML);
+    // console.log(this.canvas.toDataURL('png'))
+    // //window.open(this.canvas.toDataURL('png'));
+    // var image = new Image();
+    // image.src = this.canvas.toDataURL('png')
+    // image.crossOrigin = "anonymous";
+    // var w = window.open("");
+    // w?.document.write(image.outerHTML);
     // }
 
     // Convert canvas to data URL (PNG format)
