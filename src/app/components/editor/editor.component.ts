@@ -37,7 +37,8 @@ export class EditorComponent {
   figureEditor: boolean = false;
   selected: boolean = false;
   templateUrl!: any
-  commonUrl = 'http://localhost:8080/file/templates'
+  // commonUrl = 'http://localhost:8080/file/templates'
+  commonUrl = 'https://poster-zpqy.onrender.com/file/templates'
   v: any
 
   constructor() { }

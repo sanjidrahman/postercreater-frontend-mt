@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class AppService {
 
-  commonUrl = 'http://localhost:8080'
+  // commonUrl = 'http://localhost:8080'
+  commonUrl = 'https://poster-zpqy.onrender.com'
 
   constructor(
     private _http: HttpClient
